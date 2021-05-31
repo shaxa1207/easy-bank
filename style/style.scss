@@ -1,0 +1,344 @@
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// =============GENERAL STYLES===============
+
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+body {
+    font-family: Public Sans;
+    background: #F2F2F2;
+}
+
+// ===========================================
+// ================COMPONENTS=================
+
+.btn {
+    background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+    border-radius: 22px;
+    @include font(500, 14px, 28px, #fff);
+    padding: 8px 32px;
+}
+
+.btn:hover{        
+    opacity: 0.6;
+}
+
+.navbar {
+    &__list {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        gap: 30px;
+        margin: 0;
+        &__item {
+            a {
+                text-decoration: none;                
+                letter-spacing: -0.107692px;
+                @include font(normal, 14px, 6px, #9597A5);
+            }
+
+            &::after{
+                content: '';
+                width: 0%;
+                height: 3px;
+                margin: auto;
+                display: block;
+                background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+                transform: translate(0, 10px);
+                transition: 0.3s;
+            }
+            &:hover::after{
+                width: 100%;                    
+            }
+        }
+    }
+}
+
+.intro{
+    &__heading{        
+        letter-spacing: -1px;        
+        @include font(100, 56px, 64px, #2D314D);
+    }
+    &__text{        
+        letter-spacing: -0.28125px;
+        margin: 24px 0 36px;
+        @include font(normal, 18px, 28px, #9597A5);
+    }
+}
+
+.heading{
+    @include font(100, 40px, 64px, #2D314D);
+}
+
+.cards{
+    .img-svg{
+        display: inline-block;
+        padding: 16px;
+        background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+        border-radius: 50%
+    }
+    &__heading{
+        @include font(100, 24px, 28px, #2D314D);
+        letter-spacing: -0.428571px;
+        margin: 40px 0 26px;
+    }
+    &__text{
+        letter-spacing: -0.25px;
+        @include font(normal, 16px, 26px, #9597A5);
+    }
+}
+
+.article{
+    border-radius: 5px;
+    &__img{
+        img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+    &__text{
+        padding: 24px;
+        background: #fff;
+        border-radius: 0 0 5px 5px;
+        p{
+            margin: 0;
+        }
+        .text{
+            letter-spacing: -0.25px;
+            @include font(normal, 16px, 26px, #9597A5);
+        }
+        .author-name{
+            letter-spacing: -0.15625px;
+            @include font(normal, 10px, 18px, #9597A5);
+        }
+        .article__name{            
+            letter-spacing: -0.285714px;
+            margin: 8px 0;
+            @include font(100, 16px, 20px, #2D314D);            
+        }
+        .article__name:hover{
+            color: #30C88F;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer{
+    background: #2D314D;
+    padding: 48px 165px;
+    .social__wrapper{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;                
+        .social-websites{
+            display: flex;
+            gap: 12px;
+            a:hover{
+                path{
+                    fill: #30C88F;
+                }
+            }
+        }
+    }
+    &__navbar{
+        &__list{                                  
+            &__item{
+                margin-bottom: 8px;
+                a{
+                    @include font(normal, 15px, 26px, #fff);
+                    text-decoration: none;
+                    letter-spacing: -0.234375px;  
+                }
+                a:hover{
+                    color: #30C88F;
+                }
+            }            
+        }
+    }
+    &__right-part{
+        display: grid;
+        flex-direction: column;
+        justify-content: flex-end;        
+        .copy__right{
+            margin-top: 24px;
+            letter-spacing: -0.234375px;
+            mix-blend-mode: normal;
+            @include font(normal, 15px, 26px, #fff);
+        }
+    }
+}
+
+// ==========================================
+// ============INDEDX GAPE===================
+
+.header{
+    background: #fff;
+    padding: 33px 0;
+    display: flex;
+    align-items: center;  
+    .row{
+        display: flex;
+        align-items: center;
+    }  
+    // .burger{
+    //     // display: none;
+    //     display: inline-block;
+    //     cursor: pointer;
+    //     .bar1, .bar2, .bar3 {
+    //         width: 35px;
+    //         height: 5px;
+    //         background-color: #333;
+    //         margin: 6px 0;
+    //         transition: 0.4s;
+    //       }
+    // }
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.intro-wrapper{    
+    .row{
+        display: flex;
+        align-items: center;        
+        .intro-img{
+            display: flex;
+                justify-content: center;  
+        }
+    }
+
+}
+
+.easy-bank-cards{
+    background: #F4F5F7;
+    padding: 94px 0;
+    .easy-card-heading{
+        font-weight: 100;
+        font-size: 40px;
+        line-height: 64px;
+        letter-spacing: -0.714286px;
+        color: #2D314D;     
+    }
+    .text{
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.28125px;
+        color: #9597A5;
+        margin-bottom: 72px;
+    }  
+}
+.article-wrapper{
+    padding: 80px 0;
+    &__heading{
+        font-weight: 100;
+        font-size: 40px;
+        line-height: 64px;
+        letter-spacing: -0.714286px;
+        color: #2D314D;
+        margin-bottom: 40px;
+    }
+}
+
+// =======================================
+// =============RESPONSIVE================
+
+@media screen and ( max-width: 576px){
+    .header{
+        .row{
+            // display: flex;
+            // align-items: center;
+            .navbar{
+                display: none;        
+            }
+            .button{
+                display: none;
+            }
+            // .burger{
+            //     display: inline-block;
+            //     cursor: pointer;
+            // }
+        }        
+    }
+
+    .intro-wrapper{
+        .row{
+            display: flex;
+            flex-direction: column-reverse;
+            .intro{
+                text-align: center;
+                margin-bottom: 80px;
+                &__heading{
+                    font-size: 40px;
+                    line-height: 47px;
+                    letter-spacing: -0.714286px;
+                }
+                &__text{
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+            }    
+            .intro-img{
+                img{
+                    width: 100%;
+                }
+            }        
+        }
+    }
+
+    .easy-bank-cards{
+        text-align: center;
+        .easy-card-heading{
+            font-size: 32px;
+            line-height: 38px;
+        }
+        .text{
+            font-size: 15px;
+            line-height: 25px;
+        }
+        .cards{
+            &__heading{
+                font-size: 20px;
+                line-height: 28px;
+            }
+            &__text{
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    .article-wrapper{        
+        &__heading{
+            text-align: center;
+            font-size: 32px;
+            line-height: 38px;
+        }
+        .article{
+            margin-bottom: 24px;            
+        }
+    }
+
+    .footer{
+        text-align: center;
+        padding: 40px 80px;
+        .social-websites{
+            margin: 34px 0;
+        }       
+        &__navbar__list{
+            padding: 0;
+        }         
+    }
+}
